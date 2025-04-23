@@ -15,12 +15,16 @@
         <th>Name</th>
         <th>Price</th>
         <th>Quantity</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <tr th:each="product : ${products}" th:object="${product}">
         <td th:text="*{id}"></td>
         <td th:text="*{name}"></td>
         <td th:text="*{price}"></td>
         <td th:text="*{quantity}"></td>
+        <td><a th:href="@{/product/{id}/edit(id=*{id})}">edit</a></td>
+        <td><a th:href="@{/product/{id}/delete(id=*{id})}">delete</a></td>
     </tr>
 </table>
 </body>

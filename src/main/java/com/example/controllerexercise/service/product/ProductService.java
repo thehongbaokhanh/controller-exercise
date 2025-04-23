@@ -29,4 +29,25 @@ public class ProductService implements IProductService {
     public void save(Product product) {
         products.put(product.getId(), product);
     }
+
+    @Override
+    public Product findById(int id) {
+        return products.get(id);
+    }
+
+    @Override
+    public void remove(int id) {
+        products.remove(id);
+    }
+
+    @Override
+    public List<Product> searchProduct(String keyword) {
+        List<Product> list = new ArrayList<>();
+        for (Product product : products.values()) {
+            if (product.getName().toLowerCase().contains(keyword.toLowerCase())) {
+                list.add(product);
+            }
+        }
+        return list;
+    }
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Products</title>
+</head>
+<body>
+<form th:action="@{/product/edit}" method="post" novalidate="novalidate" th:object="${product}">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}" th:value="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" th:field="*{price}" th:value="*{price}"></td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td><input type="text" th:field="*{quantity}" th:value="*{quantity}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Edit Product"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

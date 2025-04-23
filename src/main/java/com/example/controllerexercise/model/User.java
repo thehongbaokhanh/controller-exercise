@@ -1,12 +1,12 @@
 package com.example.controllerexercise.model;
 
 public class User {
-    private int id;
     private String username;
+    private String email;
     private String password;
 
-    public User(int id, String username, String password) {
-        this.id = id;
+    public User( String username, String email, String password) {
+        this.email = email;
         this.username = username;
         this.password = password;
     }
@@ -14,12 +14,12 @@ public class User {
     public User() {
     }
 
-    public int getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -41,7 +41,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

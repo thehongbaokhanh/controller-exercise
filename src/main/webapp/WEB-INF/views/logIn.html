@@ -5,15 +5,11 @@
     <title>Add Products</title>
 </head>
 <body>
-<form th:action="@{/signup/save}" method="post" novalidate="novalidate" th:object="${user}">
+<form th:action="@{/login}" method="post" novalidate="novalidate" th:object="${user}">
     <table>
         <tr>
             <td>UserName:</td>
             <td><input type="text" th:field="*{username}"></td>
-        </tr>
-        <tr>
-            <td>Email:</td>
-            <td><input type="text" th:field="*{email}"></td>
         </tr>
         <tr>
             <td>Password:</td>
@@ -21,7 +17,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="Sign up"></td>
+            <td><input type="submit" value="Log In"></td>
         </tr>
     </table>
 </form>

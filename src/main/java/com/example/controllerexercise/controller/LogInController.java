@@ -9,21 +9,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/signup")
-public class SignUpController {
+@RequestMapping("/login")
+public class LogInController {
+    User user = new User("admin", "admin@gmail.com", "admin");
+
     @GetMapping("")
-    public String signUp(Model model) {
+    public String login(Model model) {
         model.addAttribute("user", new User());
-        return "/signUp";
-    }
-    @PostMapping ("/save")
-    public String logout(@ModelAttribute User user) {
-        System.out.println(user);
-        return "redirect:/signup/infor";
+        return "/logIn";
     }
 
-    @GetMapping("/infor")
-    public String infor() {
-        return "/userInfor";
+    @PostMapping("")
+    public String login(@ModelAttribute User user) {
+        if (user.getUsername().equals(this.user.getUsername()) && user.getPassword().equals(this.user.getPassword())) {
+            return "redirect:/signup/infor";
+        } else {
+            return "/error";
+        }
     }
 }
