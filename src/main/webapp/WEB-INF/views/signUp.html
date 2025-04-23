@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Products</title>
+</head>
+<body>
+<form th:action="@{/signup/save}" method="post" novalidate="novalidate" th:object="${user}">
+    <table>
+        <tr>
+            <td>UserName:</td>
+            <td><input type="text" th:field="*{username}"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" th:field="*{password}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add Product"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
